@@ -13,7 +13,7 @@ if game.PlaceId == 6284583030 or game.PlaceId == 7722306047 then
     end
     
     function GetThumbnail(id, type)
-     local nailname = (type == 'Normal' or type == 'Rainbow' and 'thumbnail') or (type == 'Gold' and 'goldenThumbnail') or (type == 'Dark Matter' and 'darkMatterThumbnail')
+     local nailname = (type == 'Normal' or type == 'Rainbow' and 'thumbnail') or (type == 'Golden' and 'goldenThumbnail') or (type == 'Dark Matter' and 'darkMatterThumbnail')
      local eeee = Library.Directory.Pets[tostring(id)][nailname] or Library.Directory.Pets[tostring(id)]["thumbnail"] 
      local AssetID = eeee:gsub("rbxassetid%:%/%/", "")
      local Link = "https://www.roblox.com/item-thumbnails?params=[{assetId:"..AssetID.."}]"
@@ -72,8 +72,8 @@ if game.PlaceId == 6284583030 or game.PlaceId == 7722306047 then
     function SendWebhook(uid)
     for i,v in pairs(Library.Save.Get().Pets) do
          if v.uid == uid and _G.TrackList[PettoRarity[v.id]] then
-             local ThingyThingyTempTypeThing = (v.g and 'Gold') or (v.r and 'Rainbow') or (v.dm and 'Dark Matter') or 'Normal'
-             local Formation = (v.g and ':crown: Gold') or (v.r and ':rainbow: Rainbow') or (v.dm and ':milky_way: Dark Matter') or ':roll_of_paper: Normal'
+             local ThingyThingyTempTypeThing = (v.g and 'Golden') or (v.r and 'Rainbow') or (v.dm and 'Dark Matter') or 'Normal'
+             local Formation = (v.g and ':crown: Golden') or (v.r and ':rainbow: Rainbow') or (v.dm and ':milky_way: Dark Matter') or ':roll_of_paper: Normal'
              local Thumbnail = GetThumbnail(v.id, ThingyThingyTempTypeThing)
              local Name = IDToName[v.id]
              local Nickname = v.nk
